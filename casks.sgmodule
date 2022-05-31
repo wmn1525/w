@@ -1,0 +1,45 @@
+#!name=Genshin Impact Routing Module MitM
+#!desc=A module to use Grasscutter, with MITM handled via Surge, server hosted by Exzork, moudle written by 饾悥饾惃饾惏.
+
+
+[Rule]
+DOMAIN, log-upload-os.mihoyo.com, REJECT
+DOMAIN, log-upload.mihoyo.com, REJECT
+DOMAIN, log-upload-os.hoyoverse.com, REJECT
+DOMAIN, overseauspider.yuanshen.com, REJECT
+DOMAIN, uspider.yuanshen.com, REJECT
+
+[URL Rewrite]
+# Handle MITM on client-side, discarding mitmdump.
+hk4e-api-os-static.mihoyo.com  27.casks.me header
+hk4e-sdk-os.mihoyo.com  27.casks.me header
+dispatchosglobal.yuanshen.com  27.casks.me header
+osusadispatch.yuanshen.com  27.casks.me header
+account.mihoyo.com  27.casks.me header
+log-upload-os.mihoyo.com  27.casks.me header
+dispatchcntest.yuanshen.com  27.casks.me header
+devlog-upload.mihoyo.com  27.casks.me header
+webstatic.mihoyo.com  27.casks.me header
+log-upload.mihoyo.com  27.casks.me header
+hk4e-sdk.mihoyo.com  27.casks.me header
+api-beta-sdk.mihoyo.com  27.casks.me header
+api-beta-sdk-os.mihoyo.com  27.casks.me header
+cnbeta01dispatch.yuanshen.com  27.casks.me header
+dispatchcnglobal.yuanshen.com  27.casks.me header
+cnbeta02dispatch.yuanshen.com  27.casks.me header
+sdk-os-static.mihoyo.com  27.casks.me header
+webstatic-sea.mihoyo.com  27.casks.me header
+hk4e-sdk-os-static.hoyoverse.com  27.casks.me header
+webstatic-sea.hoyoverse.com  27.casks.me header
+sdk-os-static.hoyoverse.com  27.casks.me header
+api-account-os.hoyoverse.com  27.casks.me header
+hk4e-sdk-os.hoyoverse.com  27.casks.me header
+overseauspider.yuanshen.com  27.casks.me header
+gameapi-account.mihoyo.com  27.casks.me header
+minor-api.mihoyo.com  27.casks.me header
+hk4e-sdk-os.hoyoverse.com  27.casks.me header
+uspider.yuanshen.com  27.casks.me header
+sdk-static.mihoyo.com  27.casks.me header
+
+[MITM]
+hostname = %APPEND% api-os-takumi.mihoyo.com, hk4e-api-os-static.mihoyo.com, hk4e-sdk-os.mihoyo.com, dispatchosglobal.yuanshen.com, osusadispatch.yuanshen.com, account.mihoyo.com, log-upload-os.mihoyo.com, dispatchcntest.yuanshen.com, devlog-upload.mihoyo.com, webstatic.mihoyo.com, log-upload.mihoyo.com, hk4e-sdk.mihoyo.com, api-beta-sdk.mihoyo.com, api-beta-sdk-os.mihoyo.com, cnbeta01dispatch.yuanshen.com, dispatchcnglobal.yuanshen.com, cnbeta02dispatch.yuanshen.com, sdk-os-static.mihoyo.com, webstatic-sea.mihoyo.com, hk4e-sdk-os-static.hoyoverse.com, webstatic-sea.hoyoverse.com, sdk-os-static.hoyoverse.com, api-account-os.hoyoverse.com, hk4e-sdk-os.hoyoverse.com, overseauspider.yuanshen.com, gameapi-account.mihoyo.com, minor-api.mihoyo.com, public-data-api.mihoyo.com, uspider.yuanshen.com, sdk-static.mihoyo.com,  27.casks.me
